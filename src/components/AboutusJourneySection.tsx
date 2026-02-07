@@ -154,7 +154,7 @@ const AboutusJourneySection = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 sticky top-4 sm:top-8 md:top-12 lg:top-16 xl:top-20 z-10">
         {/* Header Section */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16 lg:mb-20 px-2 sm:px-4 md:px-6">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 lg:mb-8 bg-gradient-to-r from-orange-900 via-orange-600 to-amber-500 bg-clip-text text-transparent leading-tight tracking-tight">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 lg:mb-8 bg-gradient-to-r from-orange-500 via-orange-600 to-amber-600 bg-clip-text text-transparent leading-tight tracking-tight">
             The Journey of Innovation
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white-100 max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto leading-relaxed px-2">

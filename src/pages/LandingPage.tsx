@@ -299,21 +299,7 @@ const Hero: React.FC = () => {
             inView ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
           }`}>
             <ImageSlider />
-            <div className={`absolute -bottom-14 lg:-left-10 left-6 bg-white p-5 rounded-xl shadow-lg transition-all duration-1000 ease-out delay-1000 ${
-              inView ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
-            }`}>
-              <div className="flex items-center space-x-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400">15+</div>
-                  <div className="text-sm text-gray-600">Years</div>
-                </div>
-                <div className="w-px h-12 bg-gray-300"></div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-400">500+</div>
-                  <div className="text-sm text-gray-600">Clients</div>
-                </div>
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>
@@ -407,7 +393,7 @@ const Statistics: React.FC = () => {
   const stats = [
     { icon: Building2, number: 500, suffix: '+', label: 'Healthcare Facilities', description: 'Hospitals and clinics served' },
     { icon: Package, number: 2500, suffix: '+', label: 'Products Available', description: 'Medical equipment & supplies' },
-    { icon: Users, number: 150, suffix: '+', label: 'Team Members', description: 'Dedicated professionals' },
+    { icon: Users, number: 500, suffix: '+', label: 'Clients', description: 'Trusted healthcare partners' },
     { icon: Award, number: 15, suffix: '+', label: 'Years Experience', description: 'In medical equipment supply' }
   ];
 

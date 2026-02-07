@@ -28,7 +28,7 @@ const AboutusEndSection = () => {
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
 
             <div className="relative z-10">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-orange-700 drop-shadow-lg">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-orange-600 drop-shadow-lg">
                 Ready to Transform Healthcare?
               </h2>
 
