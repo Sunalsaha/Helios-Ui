@@ -1,5 +1,7 @@
-import  { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, ChevronRight, Target, Globe, Cpu, Award, Zap } from "lucide-react";
+import JournyImg from "../assets/Journy.png";
+
 
 const milestones = [
   { year: "2010", icon: <Target className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />, title: "Company Founded", description: "HELIOS Medical Systems was established with a vision to revolutionize healthcare technology." },
@@ -116,7 +118,7 @@ const AboutusJourneySection = () => {
       ref={sectionRef}
       className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28 bg-gradient-to-br from-white/80 via-orange-50/50 to-white/80 relative overflow-hidden min-h-screen"
       style={{
-        backgroundImage: `url('./src/assets/Journy.png')`,
+          backgroundImage: `url(${JournyImg})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -381,7 +383,27 @@ const AboutusJourneySection = () => {
           </div>
         </div>
         
-       
+        {/* Mobile Navigation Dots */}
+        <div className="flex lg:hidden justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8 md:mt-10 px-4 pb-6">
+          {milestones.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setIsTransitioning(true);
+                setActiveIndex(i);
+                setTimeout(() => setIsTransitioning(false), 700);
+              }}
+              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 flex-shrink-0 shadow-sm ${
+                i === activeIndex 
+                  ? 'bg-orange-500 w-6 sm:w-8 border-2 border-orange-400 shadow-lg shadow-orange-400/50' 
+                  : i <= activeIndex
+                  ? 'bg-orange-400/70 w-2 sm:w-2.5 border border-orange-400/70'
+                  : 'bg-orange-200/70 w-2 sm:w-2.5 border-2 border-orange-200/70 hover:bg-orange-300/70'
+              }`}
+              aria-label={`Go to milestone ${i + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       <style >{`
