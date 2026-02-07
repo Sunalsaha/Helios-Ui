@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Calendar, ChevronRight, Target, Globe, Cpu, Award, Zap } from "lucide-react";
-import JournyImg from "../assets/Journy.png";
+import JournyImg from "../assets/image.png";
 
 
 const milestones = [
