@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import  { useState, useEffect, useRef } from 'react';
 import { Calendar, ChevronRight, Target, Globe, Cpu, Award, Zap } from "lucide-react";
 import JournyImg from "../assets/image.png";
 
 
 const milestones = [
+  
   { year: "2010", icon: <Target className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />, title: "Company Founded", description: "HELIOS Medical Systems was established with a vision to revolutionize healthcare technology." },
   { year: "2013", icon: <Zap className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />, title: "First Product Launch", description: "Launched our first medical imaging system, setting new standards in diagnostic accuracy." },
   { year: "2016", icon: <Globe className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6" />, title: "Global Expansion", description: "Expanded operations to Europe and Asia, serving healthcare institutions worldwide." },
@@ -274,7 +275,7 @@ const AboutusJourneySection = () => {
                   y1="200"
                   x2={200 + 120 * Math.cos((minuteHandAngle * Math.PI) / 180)}
                   y2={200 + 120 * Math.sin((minuteHandAngle * Math.PI) / 180)}
-                  stroke="#f97316"
+                  stroke="#f97416d2"
                   strokeWidth="3"
                   strokeLinecap="round"
                   filter="url(#glow)"
@@ -383,27 +384,7 @@ const AboutusJourneySection = () => {
           </div>
         </div>
         
-        {/* Mobile Navigation Dots */}
-        <div className="flex lg:hidden justify-center gap-1.5 sm:gap-2 mt-6 sm:mt-8 md:mt-10 px-4 pb-6">
-          {milestones.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setIsTransitioning(true);
-                setActiveIndex(i);
-                setTimeout(() => setIsTransitioning(false), 700);
-              }}
-              className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 flex-shrink-0 shadow-sm ${
-                i === activeIndex 
-                  ? 'bg-orange-500 w-6 sm:w-8 border-2 border-orange-400 shadow-lg shadow-orange-400/50' 
-                  : i <= activeIndex
-                  ? 'bg-orange-400/70 w-2 sm:w-2.5 border border-orange-400/70'
-                  : 'bg-orange-200/70 w-2 sm:w-2.5 border-2 border-orange-200/70 hover:bg-orange-300/70'
-              }`}
-              aria-label={`Go to milestone ${i + 1}`}
-            />
-          ))}
-        </div>
+        
       </div>
 
       <style >{`
