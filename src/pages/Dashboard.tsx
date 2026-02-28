@@ -5,7 +5,7 @@ import heroImage from "../assets/hero-medical.jpg";
 import DashboardCelebration from "../components/DashboardCelebration";
 
 import LatestLaunches from "../components/LatestLaunches";
-import RemarkableJourney from "../components/RemarkableJourney";
+import GrowthHighlights from "../components/GrowthHighlights";
 import CurrentStatistics from "../components/CurrentStatistics";
 import Footer from "../components/Footer";
 import WhyChooseHelios from "../components/WhyHeliosSection";
@@ -119,7 +119,7 @@ function Dashboard() {
                       <ContactToggle/>
         <DashboardCelebration />
         <LatestLaunches/>
-        <RemarkableJourney/>
+        <GrowthHighlights/>
         <CurrentStatistics/>
         <WhyChooseHelios/>
         <ClientFeedback/>
