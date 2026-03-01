@@ -242,7 +242,7 @@ function Product() {
       <ContactToggle />
       
       {/* Responsive Search Bar with Soft Orange Shadow - SMALLER HEIGHT */}
-      <div className="border-b border-gray-200 bg-orange-50/50 backdrop-blur-md sticky top-0 z-30 py-3 sm:py-4">
+      <div className="border-b border-gray-200 bg-white backdrop-blur-md sticky top-0 z-30 py-3 sm:py-4">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
             {/* Responsive Centered Search Input - SLIGHTLY SMALLER HEIGHT */}

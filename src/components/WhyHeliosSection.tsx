@@ -58,7 +58,7 @@ export const WhyChooseHelios = ({ features = whyUsFeatures, className = "" }: Wh
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-linear-to-br from-white/80 to-orange-50/50 backdrop-blur-sm border lg:border-orange-100/50 
+              className="group bg-linear-to-br from-white/80 to-orange-50/50 backdrop-blur-sm border lg:border-orange-300/50 
               border-orange-400/50 hover:border-orange-200 p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 hover:scale-105 relative overflow-hidden hover:bg-white/90 text-center "
               style={{ transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
             >

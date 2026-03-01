@@ -46,7 +46,12 @@ const AboutusDrivesUsSection = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-14 md:py-16 lg:py-20 relative overflow-hidden bg-gradient-to-br from-white-50/80 via-amber-50/40 to-white">
+    <section
+  className="py-12 sm:py-14 md:py-16 lg:py-20 relative overflow-hidden"
+  style={{
+    background: "linear-gradient(to bottom, #FFD9AE 0%, #FFFFFF 50%)"
+  }}
+>
       {/* Decorative gradient orbs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-radial from-orange-200/40 via-orange-100/20 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute top-20 right-0 w-80 h-80 bg-gradient-radial from-amber-200/30 via-yellow-100/15 to-transparent rounded-full blur-3xl"></div>
