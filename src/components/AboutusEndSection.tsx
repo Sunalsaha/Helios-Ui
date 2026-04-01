@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import AboutFootBg from "../assets/Aboutfoot.png";
 import { useNavigate } from "react-router-dom";
 
 
@@ -7,10 +6,7 @@ const AboutusEndSection = () => {
   const navigate = useNavigate()
   return (
     <section
-      className="py-16 sm:py-20 md:py-24 lg:py-32 bg-no-repeat bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${AboutFootBg})`,
-      }}
+      className="py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-white to-orange-200"
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">

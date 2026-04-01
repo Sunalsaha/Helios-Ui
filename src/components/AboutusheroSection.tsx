@@ -11,12 +11,13 @@ function AboutusheroSection() {
     <section className="relative min-h-screen flex items-center overflow-hidden">
       
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${bgImage})`,
-        }}
-      />
+     <div
+  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url(${bgImage})`,
+  opacity: 0.80,
+  }}
+/>
       
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-white/10" />
