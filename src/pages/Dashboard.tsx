@@ -76,18 +76,17 @@ function Dashboard() {
                   transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
                 }}
               >
-                <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
-                  <span className="bg-linear-to-r from-white via-orange-200 to-amber-200 bg-clip-text text-transparent">
-                    Advancing
-                  </span>
-                  <span className="bg-linear-to-r from-orange-300 via-amber-300 to-yellow-300 bg-clip-text text-transparent block">
-                    Medical Technology
-                  </span>
-                  <span className="text-white/90 text-4xl md:text-6xl block mt-2">
-                    for Tomorrow
-                  </span>
-                </h1>
-
+              <h1 className="text-6xl md:text-8xl font-black mb-8 leading-tight">
+  <span className="text-white">
+    Advancing
+  </span>
+  <span className="text-white block">
+    Medical Technology
+  </span>
+  <span className="text-white/90 text-4xl md:text-6xl block mt-2 font-medium">
+    for Tomorrow
+  </span>
+</h1>
                 <p className="text-2xl md:text-3xl text-white/90 mb-12 leading-relaxed max-w-5xl mx-auto font-light">
                   Revolutionary healthcare solutions that empower medical
                   professionals and transform patient care through cutting-edge

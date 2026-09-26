@@ -32,24 +32,26 @@ function NavberDashboard() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo and Brand Name */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <img
-              src={companyLogo}
-              alt="Company logo"
-              className="w-14 h-14 sm:w-12 sm:h-12"
-              style={{ objectFit: "contain" }}
-            />
-            <span className="hidden sm:block text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
-              HELIOS MEDICAL SYSTEMS
-            </span>
-            
-          </Link>
+      {/* Logo and Brand Name - flush to the true left corner of the viewport */}
+      <Link
+        to="/"
+        className="flex items-center space-x-2 sm:space-x-3 group absolute left-3 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-10 min-w-0"
+      >
+        <img
+          src={companyLogo}
+          alt="Company logo"
+          className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0"
+          style={{ objectFit: "contain" }}
+        />
+        <span className="block text-sm xs:text-base sm:text-lg lg:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 whitespace-nowrap truncate">
+          HELIOS MEDICAL SYSTEMS
+        </span>
+      </Link>
 
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-end lg:justify-center h-16 lg:h-20">
           {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center space-x-8 mx-auto absolute left-1/2 transform -translate-x-1/2">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -73,7 +75,7 @@ function NavberDashboard() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-300"
+            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-300 flex-shrink-0"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />

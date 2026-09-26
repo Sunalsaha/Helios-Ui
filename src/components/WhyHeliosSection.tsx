@@ -58,16 +58,15 @@ export const WhyChooseHelios = ({ features = whyUsFeatures, className = "" }: Wh
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group bg-linear-to-br from-white/80 to-orange-50/50 backdrop-blur-sm border lg:border-orange-300/50 
-              border-orange-400/50 hover:border-orange-200 p-8 rounded-2xl hover:shadow-2xl transition-all duration-500 hover:scale-105 relative overflow-hidden hover:bg-white/90 text-center "
+              className="group bg-linear-to-br from-white/80 to-orange-50/50 backdrop-blur-sm border xl:border-orange-300/50 
+              border-orange-400/50 hover:border-orange-600 p-8 rounded-2xl transition-colors duration-500 relative overflow-hidden text-center "
               style={{ transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
             >
               <div className="relative z-10">
                 <div className="relative mb-6 mx-auto w-24 h-24 flex items-center justify-center">
                   {/* Icon container */}
                   <div
-                    className={`w-20 h-20 bg-linear-to-br ${feature.brandColor} rounded-2xl flex items-center justify-center shadow-xl mx-auto transform transition-all duration-500 group-hover:scale-110 group-hover:rotate-3`}
-                    style={{ transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)' }}
+                    className={`w-20 h-20 bg-linear-to-br ${feature.brandColor} rounded-2xl flex items-center justify-center shadow-xl mx-auto`}
                   >
                     <feature.icon className="text-4xl text-white" />
                   </div>
