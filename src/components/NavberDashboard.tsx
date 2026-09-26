@@ -39,10 +39,10 @@ function NavberDashboard() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16 lg:h-20">
-          {/* Logo and Brand Name */}
+          {/* Logo: normal flex item on mobile, pinned to true left edge on lg+ */}
           <Link
             to="/"
-            className="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink"
+            className="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink lg:fixed lg:top-0 lg:left-0 lg:z-[60] lg:h-20 lg:pl-8"
           >
             <img
               src={companyLogo}
@@ -50,12 +50,12 @@ function NavberDashboard() {
               className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0"
               style={{ objectFit: "contain" }}
             />
-            <span className="text-xs xs:text-sm sm:text-lg lg:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 truncate">
+            <span className="hidden lg:inline text-xs xs:text-sm sm:text-lg lg:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 truncate">
               HELIOS MEDICAL SYSTEMS
             </span>
           </Link>
 
-          {/* Desktop Navigation - absolutely centered in the bar */}
+          {/* Desktop Navigation - absolutely centered in the bar, hidden on mobile */}
           <div className="hidden lg:flex items-center space-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {navLinks.map((link) => (
               <Link
@@ -77,7 +77,7 @@ function NavberDashboard() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - always at the right on mobile */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-300 flex-shrink-0 ml-2"
