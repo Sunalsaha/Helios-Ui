@@ -155,9 +155,9 @@ const ProductDisclose: React.FC = () => {
           --shadow-sm: 0 1px 3px rgba(45, 42, 39, 0.04), 0 1px 2px rgba(45, 42, 39, 0.03);
           --shadow-md: 0 4px 12px rgba(45, 42, 39, 0.06), 0 2px 4px rgba(45, 42, 39, 0.04);
           --shadow-lg: 0 12px 28px rgba(45, 42, 39, 0.08), 0 4px 8px rgba(45, 42, 39, 0.05);
-          --header-h-desktop: 76px;
-          --header-h-tablet: 132px;
-          --header-h-mobile: 168px;
+          --header-h-desktop: 82px;
+          --header-h-tablet: 180px;
+          --header-h-mobile: 175px;
         }
 
         body {
@@ -703,6 +703,33 @@ const ProductDisclose: React.FC = () => {
 
           .logo-img { width: 32px; height: 32px; }
           .brand-name { font-size: 0.9rem; }
+
+          /* Reorder: search bar first, then filter, on mobile */
+          .search-container {
+            order: 1;
+          }
+
+          .filter-row {
+            order: 2;
+          }
+
+          /* Make the filter dropdown span full width and open cleanly under the button */
+          .filter-dropdown-wrapper {
+            width: 100%;
+          }
+
+          .filter-dropdown-btn {
+            width: 100%;
+            padding: 0.7rem 1.1rem;
+            font-size: 0.8125rem;
+          }
+
+          .filter-dropdown-menu {
+            left: 0;
+            right: 0;
+            width: 100%;
+            min-width: 0;
+          }
 
           .main-container {
             padding: calc(var(--header-h-mobile) + 0.75rem) 1rem 1.5rem;

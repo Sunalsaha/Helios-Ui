@@ -16,42 +16,47 @@ function NavberDashboard() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
     { name: "Home", path: "/dashboard" },
     { name: "Products", path: "/products" },
     { name: "About Us", path: "/about" },
   ];
 
-  const isActivePage = (path: any) => location.pathname === path;
+  const isActivePage = (path: string) => location.pathname === path;
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-soft border-border"
+          ? "bg-white/95 backdrop-blur-md shadow-soft "
           : "bg-transparent"
       }`}
     >
-      {/* Logo and Brand Name - flush to the true left corner of the viewport */}
-      <Link
-        to="/"
-        className="flex items-center space-x-2 sm:space-x-3 group absolute left-3 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-10 min-w-0"
-      >
-        <img
-          src={companyLogo}
-          alt="Company logo"
-          className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0"
-          style={{ objectFit: "contain" }}
-        />
-        <span className="block text-sm xs:text-base sm:text-lg lg:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 whitespace-nowrap truncate">
-          HELIOS MEDICAL SYSTEMS
-        </span>
-      </Link>
-
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-end lg:justify-center h-16 lg:h-20">
-          {/* Desktop Navigation - Centered */}
-          <div className="hidden lg:flex items-center space-x-8">
+        <div className="relative flex items-center justify-between h-16 lg:h-20">
+          {/* Logo and Brand Name */}
+          <Link
+            to="/"
+            className="flex items-center space-x-2 sm:space-x-3 group min-w-0 flex-shrink"
+          >
+            <img
+              src={companyLogo}
+              alt="Company logo"
+              className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex-shrink-0"
+              style={{ objectFit: "contain" }}
+            />
+            <span className="text-xs xs:text-sm sm:text-lg lg:text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 truncate">
+              HELIOS MEDICAL SYSTEMS
+            </span>
+          </Link>
+
+          {/* Desktop Navigation - absolutely centered in the bar */}
+          <div className="hidden lg:flex items-center space-x-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -64,8 +69,8 @@ function NavberDashboard() {
               >
                 {link.name}
                 <span
-                  className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full ${
-                    isActivePage(link.path) ? "w-full" : ""
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full ${
+                    isActivePage(link.path) ? "w-full" : "w-0"
                   }`}
                 />
               </Link>
@@ -75,7 +80,8 @@ function NavberDashboard() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-300 flex-shrink-0"
+            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors duration-300 flex-shrink-0 ml-2"
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
               <X className="w-6 h-6" />
@@ -84,34 +90,29 @@ function NavberDashboard() {
             )}
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-white/95 backdrop-blur-md border-t border-border">
-            <div className="px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`block py-2 font-medium transition-colors duration-300 relative group ${
-                    isActivePage(link.path)
-                      ? "text-orange-500"
-                      : "text-foreground hover:text-orange-500"
-                  }`}
-                >
-                  {link.name}
-                  <span
-                    className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full ${
-                      isActivePage(link.path) ? "w-full" : ""
-                    }`}
-                  />
-                </Link>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {/* Mobile Menu - full width, own stacking context below the bar */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-border shadow-soft z-40">
+          <div className="px-4 py-4 space-y-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block py-2 font-medium transition-colors duration-300 relative w-fit ${
+                  isActivePage(link.path)
+                    ? "text-orange-500"
+                    : "text-foreground hover:text-orange-500"
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
